@@ -1,0 +1,406 @@
+{
+	"info": {
+		"_postman_id": "04d43d1e-6da3-44bd-adf4-5af7658a11ce",
+		"name": "Doc for api endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22000278"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"rathy\",\r\n    \"email\": \"rathy23@gmail.com\",\r\n    \"password\": \"rathy\",\r\n    \"phone\": \"943305462\",\r\n    \"address\":\"near govt school, pudukkottai\",\r\n    \"role\":\"User\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"rathy@gmail.com\",\r\n    \"password\": \"rathy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.cmF0aHlAZ21haWwuY29t.V3gvYuLdu3Xu3bpbf9ViCymg9hrNo_4d0MRSid4IgEk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Laptop\",\r\n    \"description\": \"I dont like\",\r\n    \"price\": 32000,\r\n    \"category\": \"Electronics\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/product/products?page=2&limit=2",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"product",
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.cmF0aHlAZ21haWwuY29t.V3gvYuLdu3Xu3bpbf9ViCymg9hrNo_4d0MRSid4IgEk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Laptop\",\r\n    \"description\": \"I dont like\",\r\n    \"price\": 32000,\r\n    \"category\": \"Electronics\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/product/products/6377cfd79317e551ba57064f",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"product",
+						"products",
+						"6377cfd79317e551ba57064f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.cmF0aHlAZ21haWwuY29t.V3gvYuLdu3Xu3bpbf9ViCymg9hrNo_4d0MRSid4IgEk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3002/product/products/6377cfd79317e551ba57064f",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"product",
+						"products",
+						"6377cfd79317e551ba57064f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product by ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.cmF0aHlAZ21haWwuY29t.V3gvYuLdu3Xu3bpbf9ViCymg9hrNo_4d0MRSid4IgEk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Book\",\r\n    \"description\": \"I like\",\r\n    \"price\": 320,\r\n    \"category\": \"Stationary\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/product/update/6377d727b890d8f53764ea7d",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"product",
+						"update",
+						"6377d727b890d8f53764ea7d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.cmF0aHlAZ21haWwuY29t.V3gvYuLdu3Xu3bpbf9ViCymg9hrNo_4d0MRSid4IgEk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Book\",\r\n    \"description\": \"I like\",\r\n    \"price\": 320,\r\n    \"category\": \"Stationaries\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/product/addProducts",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"product",
+						"addProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter product By category(Electronics)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.cmF0aHlAZ21haWwuY29t.V3gvYuLdu3Xu3bpbf9ViCymg9hrNo_4d0MRSid4IgEk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3002/product/product/electronics",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"product",
+						"product",
+						"electronics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter product by price",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.cmF0aHlAZ21haWwuY29t.V3gvYuLdu3Xu3bpbf9ViCymg9hrNo_4d0MRSid4IgEk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3002/product/product/price",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"product",
+						"product",
+						"price"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the users by giving access to Admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.Y2hhbmRhbjYyQGdtYWlsLmNvbQ.v15RB-TQXUKgCLtNVIs-DUpKTecbX_0s-ydbhc49gGw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3002/user/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"user",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter product by category(Furniture)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.cmF0aHlAZ21haWwuY29t.V3gvYuLdu3Xu3bpbf9ViCymg9hrNo_4d0MRSid4IgEk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/product/product/furniture",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"product",
+						"product",
+						"furniture"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter product by name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.cmF0aHlAZ21haWwuY29t.V3gvYuLdu3Xu3bpbf9ViCymg9hrNo_4d0MRSid4IgEk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Book\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/product/product/name",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"product",
+						"product",
+						"name"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
